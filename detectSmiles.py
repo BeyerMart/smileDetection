@@ -5,6 +5,10 @@ import glob
 import itertools
 cascPathface = os.path.dirname(cv2.__file__) + "\data\haarcascade_frontalface_alt2.xml" #Windows path
 cascPathsmile = os.path.dirname(cv2.__file__) + "\data\haarcascade_smile.xml" #Windows path
+
+# cascPathsmile = os.path.dirname(cv2.__file__) + "/data/haarcascade_smile.xml" #unix path
+# cascPathface = os.path.dirname(cv2.__file__) + "/data/haarcascade_frontalface_alt2.xml" #unix path
+
 print(cascPathface)
 faceCascade = cv2.CascadeClassifier(cascPathface)
 smileCascade = cv2.CascadeClassifier(cascPathsmile)
