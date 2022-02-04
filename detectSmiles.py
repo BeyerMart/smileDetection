@@ -4,8 +4,10 @@ import glob
 import itertools
 #from sklearn import metrics
 #import sklearn
-cascPathface = os.path.dirname(cv2.__file__) + "\data\haarcascade_frontalface_alt2.xml" #Windows path
-cascPathsmile = os.path.dirname(cv2.__file__) + "\data\haarcascade_smile.xml" #Windows path
+#cascPathface = os.path.dirname(cv2.__file__) + "\data\haarcascade_frontalface_alt2.xml" #Windows path
+#cascPathsmile = os.path.dirname(cv2.__file__) + "\data\haarcascade_smile.xml" #Windows path
+cascPathsmile = os.path.dirname(cv2.__file__) + "/data/haarcascade_smile.xml" #unix path
+cascPathface = os.path.dirname(cv2.__file__) + "/data/haarcascade_frontalface_alt2.xml" #unix path
 print(cascPathface)
 
 faceCascade = cv2.CascadeClassifier(cascPathface)
@@ -17,8 +19,7 @@ class SmileDetector:
         self.positivesImages = self.getFilenames("positives")
         self.negativesImages = self.getFilenames("negatives")
     
-    # cascPathsmile = os.path.dirname(cv2.__file__) + "/data/haarcascade_smile.xml" #unix path
-    # cascPathface = os.path.dirname(cv2.__file__) + "/data/haarcascade_frontalface_alt2.xml" #unix path
+
     # TP - img in positive folder was detected as smile
     # FP - img in negative folder was detected as smile
     # TN - img in negative folder was detected as not smile
@@ -26,7 +27,8 @@ class SmileDetector:
     
     def getFilenames(self, type):
         fnames = []
-        for files in glob.glob('dataset\\SMILEsmileD\\SMILEs\\' + type + '\\*.jpg', recursive=True):
+        for files in glob.glob('dataset/SMILEsmileD/SMILEs/' + type + '/*.jpg', recursive=True): # unix path
+        #for files in glob.glob('dataset\\SMILEsmileD\\SMILEs\\' + type + '\\*.jpg', recursive=True): # windows path
             fnames.append(files)
         return fnames
     
@@ -64,7 +66,7 @@ class SmileDetector:
         print("True Positives: ", self.TP)
         print("False Positives: ", self.FP)
         print("True Negatives: ", self.TN)
-        print("False Positives: ", self.FP)
+        print("False Negatives: ", self.FN)
     
 smileDetector = SmileDetector()
 smileDetector.classifyAllImages()
