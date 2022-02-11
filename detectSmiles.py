@@ -27,8 +27,8 @@ class SmileDetector:
     
     def getFilenames(self, type):
         fnames = []
-        for files in glob.glob('dataset/SMILEsmileD/SMILEs/' + type + '/*.jpg', recursive=True): # unix path
-        #for files in glob.glob('dataset\\SMILEsmileD\\SMILEs\\' + type + '\\*.jpg', recursive=True): # windows path
+        #for files in glob.glob('dataset/' + type + '/*.jpg', recursive=True): # unix path
+        for files in glob.glob('dataset\\' + type + '\\*.jpg', recursive=True): # windows path
             fnames.append(files)
         return fnames
     
