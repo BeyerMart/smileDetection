@@ -6,8 +6,10 @@ import itertools
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
+import time 
 
-
+#time start
+ts = time.time()
 #import sklearn
 cascPathface = os.path.dirname(cv2.__file__) + "\data\haarcascade_frontalface_alt2.xml" #Windows path
 cascPathsmile = os.path.dirname(cv2.__file__) + "\data\haarcascade_smile.xml" #Windows path
@@ -94,3 +96,4 @@ class SmileDetector:
 smileDetector = SmileDetector()
 smileDetector.classifyAllImages()
 smileDetector.printConfusionMatrix()
+print('Execution time:', time.time()-ts)
