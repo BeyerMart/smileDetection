@@ -89,7 +89,7 @@ class SmileDetector:
         print("False Negatives: ", self.FN)
 
         #print(self.y_true)
-        disp = ConfusionMatrixDisplay.from_predictions(self.y_true, self.y_pred)
+        disp = ConfusionMatrixDisplay.from_predictions(self.y_true, self.y_pred, normalize='all')
         disp.plot()
         plt.show()
     
