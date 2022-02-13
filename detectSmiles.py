@@ -15,7 +15,6 @@ cascPathface = os.path.dirname(cv2.__file__) + "\data\haarcascade_frontalface_al
 cascPathsmile = os.path.dirname(cv2.__file__) + "\data\haarcascade_smile.xml" #Windows path
 #cascPathsmile = os.path.dirname(cv2.__file__) + "/data/haarcascade_smile.xml" #unix path
 #cascPathface = os.path.dirname(cv2.__file__) + "/data/haarcascade_frontalface_alt2.xml" #unix path
-print(cascPathface)
 
 faceCascade = cv2.CascadeClassifier(cascPathface)
 smileCascade = cv2.CascadeClassifier(cascPathsmile)
@@ -90,7 +89,7 @@ class SmileDetector:
 
         #print(self.y_true)
         disp = ConfusionMatrixDisplay.from_predictions(self.y_true, self.y_pred, normalize='all')
-        disp.plot()
+        #disp.plot()
         plt.show()
     
 smileDetector = SmileDetector()
