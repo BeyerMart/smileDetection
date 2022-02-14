@@ -1,0 +1,1 @@
+.\opencv_traincascade.exe -data "\data" -vec "samples_out.vec" -bg "\dataset\SMILEsmileD\SMILEs\bg.txt" -numPos 3606 -numNeg 9474 -numStages 5 -w 64 -h 64

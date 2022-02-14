@@ -86,8 +86,8 @@ class SmileDetector:
         print("False Positives: ", self.FP)
         print("True Negatives: ", self.TN)
         print("False Negatives: ", self.FN)
+        print('Execution time:', time.time()-ts)
 
-        #print(self.y_true)
         disp = ConfusionMatrixDisplay.from_predictions(self.y_true, self.y_pred, normalize='all')
         #disp.plot()
         plt.show()
@@ -95,4 +95,3 @@ class SmileDetector:
 smileDetector = SmileDetector()
 smileDetector.classifyAllImages()
 smileDetector.printConfusionMatrix()
-print('Execution time:', time.time()-ts)

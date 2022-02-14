@@ -62,5 +62,5 @@ def create_dataset():
 
     data = np.array(data, dtype="float32")
     labels = np.array(labels)
-
+    
     return data, labels

@@ -1,1 +1,0 @@
-.\opencv_createsamples -info "G:\OneDrive\OneDrive - uibk.ac.at\uibk\5th\VC\PS\smiledetectionbemame\dataset\SMILEsmileD\SMILEs\small-positives.txt" -vec "G:\OneDrive\OneDrive - uibk.ac.at\uibk\5th\VC\PS\smiledetectionbemame\data\samples_out.vec" -w 64 -h 64 -num 10
